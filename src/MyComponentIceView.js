@@ -34,9 +34,10 @@ console.log(process.env.APIHOST);
 
 function lowStock(currentstock_boxes, name) {
   if(currentstock_boxes <160) {
-    return alert(`${name} is low - please order more!`);
-  }
+    alert(`${name} is low - please order more!`);
+  }  
 };
+
 
 const renderTable = () => {
   return responseData.map(ice => {
@@ -70,7 +71,7 @@ const renderTable = () => {
 
       <tr>
       <td>Current Stock (no of boxes):</td>
-      <td>{ice.currentstock_boxes} {ice && lowStock(ice.currentstock_boxes, ice.name)} </td>
+      <td>{ice.currentstock_boxes}{ice && lowStock(ice.currentstock_boxes, ice.name)}</td>
       </tr>
 
       <br />
